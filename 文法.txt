@@ -1,0 +1,39 @@
+算术表达式改进文法：
+    E -> TE1
+    E1 -> +TE1|-TE1|&
+    T -> FT1
+    T1 -> *FT1|/FT1|%FT1|&
+    F -> (E)|DIGIT|ID
+
+布尔表达式改进文法：
+    B -> HB1
+    B1 -> && B | &
+    H -> GH1
+    H1 -> || H | &
+    G -> F G1 | !B | (B)
+    G1->ROP F|$
+    ROP -> < | > | == | !=|>=|<=
+
+声明语句文法：
+    X -> YZ;
+    Y -> int|char|bool
+    Z -> MZ1
+    Z1 -> ,Z|&
+    M -> ID M1
+    M1 -> = E|&
+
+赋值语句文法：
+    R -> R1R2;
+    R1->ID = ER2
+    R2->,R1 | $
+语句文法：
+    Q->idO | $
+    O->++|--|$
+    I -> if(B){A}ELSE | while(B){A} | for(RB;Q){A}
+    ELSE->else{A}|$
+    A -> CA|&
+    C -> X|R|I
+
+
+main函数文法：
+    S->void main ( ) { A }

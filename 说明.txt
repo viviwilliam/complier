@@ -1,0 +1,4 @@
+hello.c为测试文件
+test.py  为词法分析
+语法分析.py  为语法分析，语义分析，中间代码生成
+tokenList  词法分析的token串
